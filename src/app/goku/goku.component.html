@@ -1,0 +1,17 @@
+<h2>Goku</h2>
+<div>
+  <p>Técnicas que Goku puede enseñar:</p>
+  <ul>
+    <li *ngFor="let technique of techniques">
+      {{ technique.name }} - Daño: {{ technique.damage }}, Dificultad:
+      {{ technique.complexity }}
+    </li>
+  </ul>
+</div>
+<app-gohan [techniques]="techniques"></app-gohan>
+
+
+
+  
+ 
+  

@@ -1,0 +1,13 @@
+<h2>Videl</h2>
+<div>
+  <p>Técnicas que Videl ha aprendido:</p>
+  <ul>
+    <li *ngFor="let technique of lowTechnique">
+      {{ technique.name }} - Daño: {{ technique.damage }}, Dificultad:
+      {{ technique.complexity }}
+      <button (click)="learnTechniqueFromGohan(technique)">
+        Notificar a Goku
+      </button>
+    </li>
+  </ul>
+</div>
