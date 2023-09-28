@@ -26,7 +26,7 @@ export class gohanComponent {
     this.learnTechniqueFromGoku.emit(technique)
   }
   
-  constructor() { }
+  constructor() { }  
 }
 
 

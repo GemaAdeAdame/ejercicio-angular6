@@ -9,23 +9,15 @@ import { Technique, techniques } from '../techniques/techniques';
 
 export class GokuComponent {
   techniques: Technique[] = techniques;
+  techniquesGohan: Technique[] = [];
+  techniquesVidel: Technique[] = [];
 
-  techniquesGohan: Technique[] = []
-
-  learnTechniqueFromGoku(technique: Technique){
-    let t: Technique | undefined = techniques.find(t => t == technique)
-    if (t)
-      this.techniquesGohan.push(t)
-  }
-
- 
-
-  techniquesVidel: Technique[] = []
-
-  learnTechniqueFromGohan(technique: Technique){
-    let t: Technique | undefined = techniques.find(t => t == technique)
-    if (t)
-      this.techniquesGohan.push(t)
+  learnTechniqueFromGoku(technique: Technique) {
+    let t: Technique | undefined = techniques.find((t) => t === technique);
+    if (t) {
+      this.techniquesGohan.push(t);
+      this.techniquesVidel.push(t);
+    }
   }
 }
 

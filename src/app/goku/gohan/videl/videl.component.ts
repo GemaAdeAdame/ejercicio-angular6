@@ -9,30 +9,23 @@ import { Technique, techniques } from '../../../techniques/techniques';
 export class VidelComponent {
    
   private _techniques: Technique[] = [];
-  private _mediumTechnique: Technique[] = [];
   private _lowTechnique: Technique[] = []; 
-
   
   @Input() set techniques(techniques: Technique[]) {
     this._techniques = techniques;
-
-    this._mediumTechnique = techniques.filter(technique =>
-      technique.complexity === 'Media');
-
-      this._lowTechnique = techniques.filter(technique =>
-        technique.complexity === 'Baja' 
+    this._lowTechnique = techniques.filter(technique =>
+    technique.complexity === 'Baja' 
     );
   }
   get techniques() { return this._techniques; }
-  get mediumTechnique() { return this._mediumTechnique; }
   get lowTechnique() { return this._lowTechnique; }
 
-  @Output() learnTechnique = new EventEmitter<Technique>();
+  @Output() learnTechniqueFromGoku: EventEmitter<any> = new EventEmitter();
 
-  learnTechniqueFromGohan(technique: Technique) {
-    // Agregar la técnica a las que gohan ha aprendido.
-    //this.learnTechnique.push(technique);
+  learnTechnique(technique: Technique) {
+    this.learnTechniqueFromGoku.emit(technique);
   }
  
   constructor() { }
 }
+
