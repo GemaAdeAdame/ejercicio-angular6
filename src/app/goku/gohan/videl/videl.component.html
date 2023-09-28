@@ -1,11 +1,11 @@
-<h1>Videl</h1>
+<h2>videl</h2>
 <div>
-  <h2>Técnicas que Videl puede aprender</h2>
- 
+  <p>Técnicas que videl puede aprender:</p>
   <ul>
-     <li *ngFor="let technique of lowTechnique">
+    <li *ngFor="let technique of lowTechnique">
       {{ technique.name }} - Daño: {{ technique.damage }}, Dificultad:
       {{ technique.complexity }}
-      <button (click)="learnTechnique(technique)">Notificar a Gohan</button> 
+      <button (click)="learnTechniques(technique)">Notificar a Gohan</button>
+    </li>
   </ul>
 </div>

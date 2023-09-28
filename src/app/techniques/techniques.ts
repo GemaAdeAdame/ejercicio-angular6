@@ -17,3 +17,6 @@ export const techniques: Technique[] = [
 
 
 
+
+  export const lowTechnique = techniques.filter((techniques) => techniques.complexity === 'Baja');
+  console.log(lowTechnique);

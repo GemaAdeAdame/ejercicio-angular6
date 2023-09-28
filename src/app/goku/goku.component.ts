@@ -9,18 +9,20 @@ import { Technique, techniques } from '../techniques/techniques';
 
 export class GokuComponent {
   techniques: Technique[] = techniques;
-  techniquesGohan: Technique[] = [];
-  techniquesVidel: Technique[] = [];
 
-  learnTechniqueFromGoku(technique: Technique) {
-    let t: Technique | undefined = techniques.find((t) => t === technique);
-    if (t) {
-      this.techniquesGohan.push(t);
-      this.techniquesVidel.push(t);
-    }
+  techniquesGohan: Technique[] = []
+  techniquesvidel: Technique[] = []
+
+  learnTechniqueFromGoku(technique: Technique){
+    let t: Technique | undefined = techniques.find(t => t == technique)
+    if (t)
+      this.techniquesGohan.push(t)
   }
+  notificar(technique: Technique){
+  let t: Technique | undefined = techniques.find(t => t == technique)
+  if (t)
+    this.techniquesvidel.push(t)
 }
-
-
+}
 
 

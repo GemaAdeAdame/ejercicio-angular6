@@ -1,6 +1,6 @@
-<h1>Goku</h1>
+<h2>Goku</h2>
 <div>
-  <h2>Estas son las técnicas de Goku</h2>
+  <h1>Estas son las técnicas de Goku</h1>
   <ul>
     <li *ngFor="let technique of techniques">
       {{ technique.name }} - Daño: {{ technique.damage }}, Dificultad:
@@ -11,6 +11,7 @@
 <app-gohan
   [techniques]="techniques"
   (learnTechniqueFromGoku)="learnTechniqueFromGoku($event)"
+  (notifyFromVidel)="notificar($event)"
 ></app-gohan>
 
 <h3>Técnicas aprendidas por Gohan</h3>
@@ -21,12 +22,11 @@
   </li>
 </ul>
 
-<app-videl
-[techniques]="techniques"
-(learnTechniqueFromGoku)="learnTechniqueFromGoku($event)"></app-videl>
 
-<h3>Técnicas aprendidas por Videl</h3>
-<li *ngFor="let technique of techniquesVidel">
-  {{ technique.name }} - Daño: {{ technique.damage }}, Dificultad:
-  {{ technique.complexity }}
-</li>
+<h3>Técnicas aprendidas por videl</h3>
+<ul>
+  <li *ngFor="let technique of techniquesvidel">
+    {{ technique.name }} - Daño: {{ technique.damage }}, Dificultad:
+    {{ technique.complexity }}
+  </li>
+</ul>

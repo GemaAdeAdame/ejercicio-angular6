@@ -26,7 +26,14 @@ export class gohanComponent {
     this.learnTechniqueFromGoku.emit(technique)
   }
   
-  constructor() { }  
+  constructor() { }
+
+  @Output() notifyFromVidel: EventEmitter<any> = new EventEmitter();
+
+  techniquesVidel(technique: Technique) {
+  this.notifyFromVidel.emit(technique)
+  console.log(technique)
+  }
 }
 
 
