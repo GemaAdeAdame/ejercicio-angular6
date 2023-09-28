@@ -1,8 +1,5 @@
-// gohan.component.ts
-
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Technique } from '../../techniques/techniques';
-
 
 @Component({
   selector: 'app-gohan',
@@ -11,32 +8,28 @@ import { Technique } from '../../techniques/techniques';
 
 export class gohanComponent {
  private _techniques: Technique[] = [];
-
  private _mediumTechnique: Technique[] = [];
-
-
-  //@Input() techniques: Technique[] = [];
 
   @Input() set techniques(techniques: Technique[]) {
     this._techniques = techniques;
-
     this._mediumTechnique = techniques.filter(technique =>
-      technique.complexity === 'Media' 
+      technique.complexity === 'Media'
     );
   }
   get techniques() { return this._techniques; }
-
   get mediumTechnique() { return this._mediumTechnique; }
 
-  
-  //@Output()
-  @Output() learnTechnique = new EventEmitter<Technique>();
 
-  learnTechniqueFromGoku(technique: Technique) {
-    // Agregar la técnica a las que gohan ha aprendido.
-    //this.learnTechnique.push(technique);
+  @Output() learnTechniqueFromGoku: EventEmitter<any> = new EventEmitter();
+
+  learnTechnique(technique: Technique) {
+    this.learnTechniqueFromGoku.emit(technique)
   }
-
+  
   constructor() { }
 }
 
+
+
+
+  

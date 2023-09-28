@@ -14,8 +14,4 @@ export class AppComponent {
   techniques: Technique[] = techniques; // Asigna las técnicas correctamente.
 
   // Método para notificar a Goku sobre una técnica aprendida por gohan
-  notifyGoku(technique: Technique) {
-    // Puedes implementar aquí la lógica para notificar a Goku
-    console.log(`gohan ha aprendido una nueva técnica: ${technique.name}`);
-  }
 }

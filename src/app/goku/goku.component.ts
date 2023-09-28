@@ -1,7 +1,5 @@
-// src/app/goku/goku.component.ts
-
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Technique, techniques } from '../techniques/techniques'; // Asegúrate de importar las técnicas.
+import { Technique, techniques } from '../techniques/techniques'; 
 
 @Component({
   selector: 'app-goku',
@@ -11,5 +9,26 @@ import { Technique, techniques } from '../techniques/techniques'; // Asegúrate 
 
 export class GokuComponent {
   techniques: Technique[] = techniques;
-  constructor() { }
+
+  techniquesGohan: Technique[] = []
+
+  learnTechniqueFromGoku(technique: Technique){
+    let t: Technique | undefined = techniques.find(t => t == technique)
+    if (t)
+      this.techniquesGohan.push(t)
+  }
+
+ 
+
+  techniquesVidel: Technique[] = []
+
+  learnTechniqueFromGohan(technique: Technique){
+    let t: Technique | undefined = techniques.find(t => t == technique)
+    if (t)
+      this.techniquesGohan.push(t)
+  }
 }
+
+
+
+

@@ -1,13 +1,9 @@
 <h2>Gohan</h2>
-<div>
-  <p>Técnicas que Gohan ha aprendido:</p>
+<p>Técnicas que Gohan puede aprender</p>
 <ul>
   <li *ngFor="let technique of mediumTechnique">
     {{ technique.name }} - Daño: {{ technique.damage }}, Dificultad:
     {{ technique.complexity }}
-    <button (click)=" learnTechniqueFromGoku(technique)">
-      Notificar a Goku
-    </button>
+    <button (click)="learnTechnique(technique)">Notificar a Goku</button>
   </li>
 </ul>
-<app-videl [techniques]="techniques"></app-videl>
